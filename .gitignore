@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+*.pyo
+
+# Virtual Environment
+venv/
+env/
+
+# dotenv
+.env
+
+# Audio Output (TTS results)
+code/audio/
+
+# VS Code settings
+.vscode/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs (optional)
+*.log
