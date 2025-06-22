@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: TheyYappAboutEnvironment
+    env: python
+    plan: free
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "gunicorn app:ap"
+    envVars:
+      - key: FLASK_ENV
+        value: production
+      - key: GOOGLE_API_KEY
+        fromSecret: google-api-key-secret
