@@ -10,9 +10,5 @@ scikit-learn
 scipy
 gtts
 pyttsx3
-google-apis-python
-google-api-python-client
-google-auth
-google-auth-oauthlib
 google-cloud-aiplatform
 
