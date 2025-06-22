@@ -1,0 +1,11 @@
+flask
+langchain
+pandas
+tiktoken
+huggingface_hub
+python-dotenv
+# Additional libraries for specific functionalities
+numpy       
+scikit-learn
+scipy
+

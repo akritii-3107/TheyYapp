@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Talking Portraits</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+<style>
+    .disabled {
+      pointer-events: none;
+      opacity: 0.5;
+    }
+    #result-container {
+      margin-top: 40px;
+      scroll-margin-top: 100px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🖼️ Talking Portraits</h1>
+    <p>Select a famous figure and an environmental topic — watch them speak their mind.</p>
+
+    <div class="form-group">
+      <label>Choose a Portrait:</label>
+      <div id="character-carousel" class="carousel">
+        {% for key, (image_file, display_name) in characters.items() %}
+          <img src="{{ url_for('static', filename='images/' + image_file) }}"
+               data-character="{{ key }}"
+               alt="{{ display_name }}"
+               class="carousel-img"
+               onclick="selectCharacter(this)">
+        {% endfor %}
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Choose a Topic:</label>
+      <div class="topic-buttons">
+        {% for topic in topics %}
+          <button class="topic-btn" onclick="selectTopic('{{ topic }}')">{{ topic.title() }}</button>
+        {% endfor %}
+      </div>
+    </div>
+
+    <!-- Scroll anchor and result container -->
+    <div id="result-container" class="result fade-in" style="display: none;">
+      <h2 id="response-heading"></h2>
+      <img alt="Generated Image" class="talking-img" id="response-image">
+      <p id="response-text"></p>
+    </div>
+  </div>
+
+  <script src="{{ url_for('static', filename='js/script.js') }}" ></script>
+</body>
+</html>
