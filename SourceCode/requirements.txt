@@ -10,6 +10,4 @@ scikit-learn
 scipy
 gtts
 pyttsx3
-google-cloud-aiplatform
-google-generative-ai
-
+google-generativeai
